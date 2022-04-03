@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://todolist.test/api/todos';
+const URL = 'api/todos';
 
 export const todoServices = {
     all: () => axios.get(URL),

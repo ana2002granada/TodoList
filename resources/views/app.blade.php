@@ -8,6 +8,8 @@
         <link rel="shortcut icon" href="icon.svg" type="svg/x-icon">
     </head>
     <body>
+        <a href="{{route('todo.export.form')}}" class="btn btn-primary">Descarga aquí</a>
+        <a href="{{route('todo.import.form')}}" class="btn btn-primary">importa aquí</a>
         <div id="app"/>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
