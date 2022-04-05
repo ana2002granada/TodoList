@@ -1,5 +1,6 @@
 <?php
 
+use App\Constants\ToDoStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,17 +13,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->enum('status', ['pending','in.process', 'successful']);
+            $table->enum('status', [ToDoStatus::PENDING,ToDoStatus::PROCESSING, ToDoStatus::SUCCESSFUL]);
             $table->timestamps();
         });
+
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('todos');
     }
